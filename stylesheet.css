@@ -1,0 +1,804 @@
+@charset "utf-8";
+
+/* ===全体  Hoshikake Aquarium======== */
+html {
+    font-size: 100%;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Arial', 'Hiragino Sans', 'Gothic ProN', 'Meiryo', sans-serif;
+    font-size: 1.2rem;
+    color: #fff;
+    background-color: #043c78;
+}
+
+a {
+  text-decoration: none;
+  color: #fff;
+}
+
+img {
+  max-width: 100%;
+}
+
+li {
+  list-style: none;
+}
+
+.wrapper {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 8%;
+}
+
+.section-title {
+  font-size: 2.5rem;
+  padding-bottom: 3%;
+}
+
+.area-map {
+  border-bottom: 1px solid;
+  color: aqua;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+/* =====ヘッダー====================== */
+#toggle {
+  display: none;
+}
+
+.nav-content {
+  position: fixed;
+  bottom: 3%;
+  right: 1%;
+  margin-bottom: 20px;
+  z-index: 100;
+}
+
+.nav-content a {  
+  display: block;
+  padding: 12px 5px 12px 0;  
+}
+
+.nav-content a:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+/*=====ここまでは消さない！！===========*/
+
+.nav-content-sp {
+  display: none;
+}
+
+.toggle:checked ~ .nav-content {
+  display: none;
+}
+
+/* =====メインビジュアル============== */
+#mainvisual {
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-attachment: fixed;
+  height: 200vh; 
+  position: relative;
+  color: #fff;
+  animation: image_anime 30s ease-out infinite;
+}
+
+
+@keyframes image_anime {
+  0% {
+    background-image: url(img/jellyfish-1.jpg);
+  }
+  20% {
+    background-image: url(img/dolphin-1.jpg);
+  }
+  55% {
+    background-image: url(img/jellyfish-3.jpg);
+  }
+  75% {
+    background-image: url(img/manta-3.jpg);
+  } 
+  100% {
+    background-image: url(img/jellyfish-1.jpg);
+  }
+}
+
+#mainvisual .site-title {
+  font-size: 3.5rem;
+  margin: 0;
+  position: absolute;
+  top: 15%;
+  left: 15%;
+}
+
+#mainvisual .mainvisual-text { 
+  height: 200vh;
+}
+
+#mainvisual .mainvisual-scroll {
+  height: 200vh;
+  text-align: center;
+}
+
+#mainvisual .mainvisual-scroll p {
+  font-size: 1.7rem;
+  position: absolute;
+  top: 65%;
+  left: 15%;
+}
+
+/* =====ショー======================== */
+#show {
+  background-image: url(img/foam.jpg);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: rgba(4,60,120, 0.5);
+  background-blend-mode: darken;
+  height: 120%;
+  color: #fff;
+}
+
+#show .wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+.slide img {
+  width: inherit;
+  height: inherit;
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.slide {
+  white-space: nowrap;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  margin: 10vh 0;
+}
+
+.slide > :first-child {
+  animation-name: slide;
+  animation-duration: 60s;
+  animation-delay: 0s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes slide {
+  0% {
+    margin-left: 0;
+  }
+  25% {
+    margin-left: -100%;
+  }
+  50% {
+    margin-left: -200%;
+  }
+  75% {
+    margin-left: -300%;
+  }
+  100% {
+    margin-left: -400%;
+  }
+}
+
+.show-text {
+  width: 30%;
+  padding: 18% 0 0 5%;
+  font-size: 1.2rem;
+}
+
+.show-text span {
+  display: block;
+  margin-bottom: 5%;
+  white-space: nowrap;
+}
+  
+/* ======ナイトツアー===================== */
+#tour {
+  background-position: center top;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  padding-top: 20vh;
+  position: relative;
+  color: #fff;
+  animation: night_anime 30s ease-out infinite;
+}
+
+@keyframes night_anime {
+  0% {
+    background-image: url(img/night-jellyfish-1.jpg);
+  }
+  20% {
+    background-image: url(img/jellyfish-2.jpg);
+  }
+  40% {
+    background-image: url(img/night-jellyfish-3.jpg);
+  }
+  60% {
+    background-image: url(img/night-jellyfish-4.jpg);
+  } 
+  80% {
+    background-image: url(img/night-jellyfish-2.jpg);
+  }
+  100% {
+    background-image: url(img/night-jellyfish-1.jpg);
+  }
+}
+
+#tour .container {
+  width: 100%;
+  padding: 0 8%;
+}
+
+#tour .container p {
+  font-size: 1.4rem;
+}
+
+#tour .night {
+  text-align: right;
+  padding-top: 10vh;
+  color: #fff;
+  margin: 0 auto;
+}
+
+#tour .night p:first-child {
+  margin-bottom: 3%;
+}
+
+/* =====インフォメーション====================== */
+#infomation {
+  background-image: url(img/dolphin-6.jpg);
+  background-size: cover;
+  background-position: bottom;
+  background-repeat: no-repeat;
+  height: auto;
+  padding-top: 15vh;
+  padding-bottom: 15vh;
+  text-align: center;
+}
+
+#infomation .section-title {
+  margin-bottom: 3%;
+}
+
+.content {
+  margin-bottom: 5%;
+  display: flex;
+  align-items: center;
+}
+
+.content:last-child {
+  margin-bottom: 0;
+} 
+
+.content img {
+  width: 50%;
+  height: 25%;
+  overflow: hidden;
+}
+
+.content-text {
+  width: 35%;
+  padding-left: 50px;
+}
+
+.content-text span {
+  display: block;
+  font-weight: bold;
+  text-align: left;
+}
+
+.content-text P {
+  padding-top: 10px;
+  text-align: left;
+}
+
+/* =====営業時間・料金================ */
+#hours-fees {
+  background-image: url(img/anemonefish.jpg);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  height: 90vh;
+  text-align: center;
+  padding-top: 15vh;
+}
+
+#hours-fees .section-title {
+  margin-bottom: 50px;
+}
+
+#hours-fees .wrapper .content-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.hours,  .fees {
+  width: 48%;
+  border: 1px solid;
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+#hours-fees .hours th, .fees th {
+  font-size: 1.5rem;
+  padding: 12px 0;
+}
+
+#hours-fees .hours td, .fees td {
+  padding: 12px;
+}
+
+/* =====アクセス====================== */
+#access {
+  background-image: url(img/penguin-3.jpg);
+  background-size: cover;
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  padding-top: 15vh;
+  padding-bottom: 15vh ;
+}
+
+#access .section-title {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+#access .location {
+  display: flex;
+  justify-content: space-around;
+}
+
+.location .access-address h3 {
+  margin-bottom: 10px;
+}
+
+.location .access-way span {
+  display: inline-block;
+  padding: 15px 0 5px 0;
+}
+
+.map {
+  margin-top: 60px;
+  text-align: right;
+}
+
+.map iframe {
+  width: 35vw;
+  height: 22vw;
+}
+
+/* =====フッター====================== */
+footer {
+  background-image: url(img/foam.jpg);
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  background-color: rgba(4,60,120, 0.5);
+  background-blend-mode: darken;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer .copyright {
+  height: 100px;
+  line-height: 100px;
+  text-align: center;
+  padding-right: 20px;
+}
+
+footer .footer-icon {
+  display: flex;
+}
+
+.footer-icon a:hover {
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+footer .footer-icon .fab {
+  padding-right: 20px;
+}
+
+.wrap {
+  overflow: hidden;
+}
+
+/* ==================================
+   SP1     １
+===================================== */
+@media screen and (max-width: 1024px) {
+  .wrapper {
+    padding: 0 3%;
+  }
+
+  .section-title {
+  font-size: 2.5rem;
+  }
+
+/* =====SP1ヘッダー======================= */
+  #toggle {
+    display: none;
+  }
+
+  .header-btn {
+    position: relative;
+    position: fixed;
+    bottom: 5%;
+    right: 8%;
+    z-index: 100;
+  }
+
+  .header-btn span {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+  }
+
+  .header-btn span i {
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    display: block;
+    background-color: #fff;
+    transition: all .3s ease-in-out;
+  }
+
+  .header-btn span i:nth-child(1) {
+    top: 0;
+  }
+
+  .header-btn span i:nth-child(2) {
+    margin: auto;
+    top: 0;
+    bottom: 0;
+  }
+
+  .header-btn span i:nth-child(3) {
+    bottom: 0;
+  }
+
+  #toggle:checked + .header-btn span i:nth-child(1) { 
+    margin: auto;
+    transform: rotate(45deg);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+
+  #toggle:checked + .header-btn span i:nth-child(2) {
+    margin: auto;  
+    transform: rotateX(90deg);
+    top:0 ;
+    bottom: 0;
+  }
+
+  #toggle:checked + .header-btn span i:nth-child(3) {
+    margin: auto;
+    transform: rotate(-45deg);
+    top: 0;
+    right: 0;
+    bottom: 0;
+  }
+  /*=====↑ハンバーガー部分↑==============*/
+  
+  #toggle:checked + .header-btn + .nav-content + .nav-content-sp {
+    position: fixed;
+    z-index: 99;
+    opacity: 1;
+    display: block;  /*ナビの代わりに3本線を表示する*/
+  }
+
+  .nav-content {    /*PC用のナビを隠す*/
+    display: none;
+  }
+
+  .nav-content-sp {  
+    
+    display: none;  /*SP用のナビを呼び出すが非表示*/
+    opacity: 0;  
+    position: fixed;
+    bottom: 8%;
+    right: 0;
+    z-index: 80;
+    transition: all 0.5s ease-in-out;
+  }
+
+  .nav-sp {
+    position: absolute;
+    right: -100%;
+    bottom: 10%;
+    transition: all 0.5s ease-in-out;
+    overflow-y: scroll;
+    width: 20vw;
+  }
+
+  .nav-sp a {
+    display: block;
+    padding: 10px 5px 10px 0;
+  }
+
+  .nav-sp a:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+
+  .nav-sp li {
+    width: 100%;
+  }
+
+  /* =====SP1メインビジュアル============= */  
+  #mainvisual .site-title {
+    top: 15%;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+  }
+
+  #mainvisual .mainvisual-scroll p {
+    font-size: 2rem;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+  }
+
+/* =====SP1ショー========================= */
+  #show {
+    height: 130vh;
+  }
+
+  #show .wrapper {
+    padding: 0 0 15vh 0;
+    flex-direction: column;
+    flex-flow: column-reverse;
+  }  
+
+  #show .show-text {
+    width: 70%;
+    margin: 0 auto;
+    padding: 15vh 0 10vh 0;
+    text-align: center;
+  }
+
+  #show .section-title {
+    text-align: left;
+  }
+
+  .show-text span {
+    text-align: left;
+  }
+
+  .show-text p {
+    text-align: right;
+  }
+
+  .slide {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+  }
+  
+/* =====SP1ナイトツアー=================== */
+  #tour {
+    z-index: 10;
+  }
+
+  #tour .container {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  #tour .container p {
+    font-size: 1.5rem;
+  }
+
+/* =====SP1インフォメーション============= */
+  #infomation {
+    padding-bottom: 15vh;
+  }
+
+  .content {
+    flex-direction: column;
+    margin-bottom: 8%;
+  }
+
+  .content img {
+    width: 90%;
+  }
+
+  .content-text {
+    width: 62%;
+    text-align: left;
+    margin: 0 auto;
+    padding: 3% 0;
+  }
+
+  .content-text:last-child {
+    padding-bottom: 0;
+  } 
+  
+  .content-text span {
+    font-size: 1.5rem;
+  }
+
+/* =====SP1営業時間・料金================= */
+  #hours-fees {
+    background-position: center;
+    height: auto;
+    padding-bottom: 15vh;
+  }
+
+  #hours-fees .wrapper .content-list {
+    flex-direction: column;
+  }
+
+  .hours, .fees {
+    width: 90%;
+  }
+
+  .hours {
+    margin-bottom: 15vh;
+  }
+ 
+/* =====SP1アクセス======================= */
+  #access {
+    background-image: url(img/ripples.jpg);
+    background-position: bottom;
+    padding-bottom: 10vh;
+  }
+
+ #access .location {
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .access-address {
+    margin-bottom: 50px;
+  }
+
+  .map {
+    width: 100%;
+  } 
+
+  .map iframe {
+    width: 100%;
+    height: 61.6vw;
+  }
+/* =====SP1=============================== */
+  .wrap {
+    overflow: hidden;
+  }
+}
+
+/* ==================================
+    SP2     ２
+===================================== */
+@media screen and (max-width: 414px) {
+  .wrapper {
+    padding: 0 1%;
+  }
+
+  .section-title {
+    font-size: 1.7rem;
+  }
+
+/* =====SP2ヘッダー======================= */
+  .header-btn {
+    bottom: 5%;
+    right: 8%;
+  }
+
+  .header-btn span {
+    width: 25px;
+    height: 25px;
+  }
+
+  header .nav-sp a {
+    display: block;
+    padding: 12px 5px 12px 0;
+  }
+
+  header .nav-content-sp .fab {
+    top: 10px;
+  }
+
+  .nav-sp {
+    background-color: rgba(0, 0, 128, 0.8);
+    padding: 15px 0 15px 25px;
+    width: 50vw;
+  }
+
+  /* =====SP2メインビジュアル============= */  
+  #mainvisual .site-title {
+    font-size: 2.2rem;
+  }
+
+  #mainvisual .mainvisual-scroll p {
+    font-size: 1rem;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+  }
+
+/* =====SP2ショー========================= */
+  #show {
+    width: 100%;
+    height: 120%;
+  }
+
+  .show-text {
+    width: 100%;
+    font-size: 1rem;
+    margin: 0;
+    text-align: center;
+  }
+
+/* =====SP2ナイトツアー=================== */
+  #tour .container {
+    width: 100%;
+  }
+
+  #tour .container p {
+    font-size: 1rem;
+  }
+
+/* =====SP2インフォメーション============= */
+  .content-text {
+    width: 80%;
+  }
+
+  .content-text span {
+    font-size: 1.2rem;
+  }
+
+  .content-text p {
+    font-size: 1rem;
+  }
+
+/* =====SP2営業時間・料金================= */
+  #hours-fees {
+    background-image: url(img/anemonefish-1.jpg);
+    background-position: center;
+  }
+
+/* =====SP2アクセス======================= */
+  #access {
+    margin-bottom: 0;
+  }
+
+  .loca p {
+    font-size: 1rem;
+  }
+
+  .map {
+    margin-top: 40px;
+  }
+
+  .map iframe {
+    width: 100%;
+    height: 80vw;
+  }
+
+/* =====SP2=============================== */
+  .wrap {
+    overflow: hidden;
+  }
+}
